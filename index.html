@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Front End Guidelines</title>
+    <meta name="description" content="Some basic front end development guidelines for improved coding consistency">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <header class="global-header" role="banner">
+        <h1>Front End Guidelines</h1>
+        <nav>
+            <h1>Contents</h1>
+            <ul>
+                <li><a href="#general">General</a></li>
+                <li><a href="#markup">Markup</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#accessibility">Accessibility</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#other">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content" role="main">
+
+        <section id="general">
+
+            <h1>General</h1>
+
+            <article>
+                <!--<h1>The Basics</h1>-->
+                <ol>
+                    <li>Build everything with a <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> approach</li>
+                    <li>Think about how best to describe the information with code rather than just how to reproduce the design in a web browser</li>
+                    <li>Build mobile first and responsive, in most cases (<a href="http://sixrevisions.com/mobile/native-app-vs-mobile-web-app-comparison/">info</a>)</li>
+                    <li>The <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a> is a great starting point for most new projects. Be sure to remove what isn’t being used though</li>
+                    <li>Remember the separation between content (HTML) presentation (CSS) and behaviour (JavaScript)</li>
+                    <li>JavaScript should only <a href="http://icant.co.uk/articles/pragmatic-progressive-enhancement/">progressively enhance</a> the experience</li>
+                    <li>Code readability is preferable over file-size savings. There is no need to purposefully compress HTML or CSS whilst writing it; this should be part of the build process</li>
+                    <li>Always comment code where appropriate (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#javascriptCommenting">example</a>)</li>
+                </ol>
+            </article>
+
+        </section>
+
+        <section id="markup">
+
+            <h1>Markup</h1>
+
+            <article>
+                <!--<h1>Writing HTML</h1>-->
+                <ol>
+                    <li>Markup should be well-formed and <a href="http://en.wikipedia.org/wiki/Semantic_HTML">semantically correct</a></li>
+                    <li>HTML5 Doctype and features should be used wherever appropriate</li>
+                    <li>Indentation should be 4 spaces. Correct indentation should be enforced to prevent unnecessary HTML comments and to improve maintainability</li>
+                    <li>The <a href="http://validator.w3.org/">W3C Validator</a> can be used to check for code errors, but 100% validation is not required</li>
+                    <li>Use <a href="http://microformats.org/">Microformats</a> where appropriate, specifically <a href="http://microformats.org/wiki/hcard">hCard</a> and <a href="http://microformats.org/wiki/adr">adr</a></li>
+                    <li>Always use title-case for headers and titles. Do not use all caps or all lowercase titles in markup, instead apply the CSS property <code>text-transform:uppercase/lowercase</code></li>
+                    <li>Do not self-close HTML5 elements (e.g. use <code>&lt;br&gt;</code> instead of <code>&lt;br /&gt;</code>)</li>
+                    <li>Ensure old XHTML code isn't used (<a href="http://developer.fellowshipone.com/patterns/code.php#_101_needless_code">example</a>)</li>
+                </ol>
+            </article>
+
+        </section>
+
+        <section id="css">
+
+            <h1>CSS</h1>
+
+            <article>
+                <!--<h1>Writing CSS</h1>-->
+                <ol>
+                    <li>Write CSS in <a href="http://lesscss.org/">LESS</a> for all the <a href="http://blog.bugsense.com/post/16878087313/learn-about-less-and-why-it-rocks-so-hard">benefits it brings</a></li>
+                    <li>Consider using <code>* { box-sizing: border-box }</code> on new responsive projects (<a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">info</a>)</li>
+                    <li>Reference CSS files in the document <code><head></code> before any JavaScript (<a href="https://github.com/h5bp/html5-boilerplate/blob/master/index.html">example</a>)</li>
+                    <li>Use the <a href="https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css">H5BP's stylesheet</a> to normalise cross-browser inconsistencies</li>
+                    <li>Use classes for styling and JavaScript targeting purposes. Use IDs only where absolutely required (<a href="http://oli.jp/2011/ids/">info</a>)</li>
+                    <li>Know when to Float, and when to Position (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#cssFloatOrPosition">info</a>)</li>
+                    <li>Separate selectors and declarations by new lines (<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml?showone=Selector_and_declaration_separation#Selector_and_declaration_separation">example</a>)</li>
+                    <li>Use meaningful or generic class names (<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml?showone=ID_and_class_naming#ID_and_class_naming">example</a>)</li>
+                    <li>Class names should be lowercase and separated with dashes (<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml?showone=ID_and_class_name_delimiters#ID_and_class_name_delimiters">info</a>). Use <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a> for JS</li>
+                    <li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">CSS specificity</a> to write most efficient selectors and to <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">avoid over specifying</a></li>
+                    <li>Don't use <code>!important</code> to override rules. This is not needed with correct CSS specificity</li>
+                    <li>Write CSS properties as shorthand wherever possible (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#cssShorthand">info</a>)</li>
+                    <li>Omit unit specification after "0" values (<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml?showone=0_and_units#0_and_units">info</a>)</li>
+                    <li>Omit quotation marks in URI values (<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml?showone=Quotation_marks_in_URI_values#Quotation_marks_in_URI_values">info</a>)</li>
+                    <li>Use <code>@font-face</code> for embedding custom fonts (<a href="http://www.fontsquirrel.com/fontface/generator/">generator</a>) and be aware of performance implications</li>
+                </ol>
+            </article>
+
+        </section>
+
+        <section id="javascript">
+
+            <h1>JavaScript</h1>
+
+            <article>
+                <!--<h1>Writing JavaScript</h1>-->
+                <ul>
+                    <li>Place all JavaScript at the end of your document, except in <a href="#">special circumstances</a></li>
+                    <li>Use single quotes as much as possible (<a href="http://stackoverflow.com/questions/242813/when-to-use-double-or-single-quotes-in-javascript">info</a>)</li>
+                    <li>Feature sniff, rather than browser sniff, using <a href="http://modernizr.com/">Modernizr</a> (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#javascriptFeatureSniff">info</a>)</li>
+                    <li>Don't use <code>document.write()</code> (<a href="#">info</a>). There are better alternatives such as <code>.innerHTML</code> or <code>.createElement</code></li>
+                    <li>Use <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a> for variable and function names (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#javascriptCamelCase">info</a>)</li>
+                    <li>Constants or configuration variables (like animation durations, etc.) should be at the top of the file</li>
+                    <li>Comment your code effectively and make it easy to read. Minification happens later</li>
+                    <li>Place all global plugins within <code>plugins.js</code> and all global JavaScript within <code>main.js</code></li>
+                    <li><a href="http://taitems.github.com/Front-End-Development-Guidelines/#javascriptSection">More JavaScript guidelines</a></li>
+                </ul>
+            </article>
+
+        </section>
+
+        <section id="accessibility">
+
+            <h1>Accessibility</h1>
+
+            <article>
+                <!--<h1>Making it Accessible</h1>-->
+                <ol>
+                    <li>Understand and use ARIA (<a href="#">intro</a>)</li>
+                    <li>Interfaces should be checked against <a href="http://www.w3.org/TR/WCAG10/full-checklist.html">W3C's Checklist for Web Content Accessibility</a></li>
+                    <li>Interfaces should meet <a href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#Guidelines">WCAG Priority 1 Guidelines</a></li>
+                    <li><a href="http://sixrevisions.com/web-standards/accessibility_testtools/">More accessibility tools</a></li>
+                </ol>
+            </article>
+
+        </section>
+
+        <section id="performance">
+
+            <h1>Performance</h1>
+
+            <article>
+                <!--<h1>Making it Perform</h1>-->
+                <ol>
+                    <li>All CSS and JavaScript files should be minified and in as few files as is sensible for deployment to live servers</li>
+                    <li>Google's <a href="https://developers.google.com/speed/docs/best-practices/rules_intro">Web Performance Best Practices</a> should be adhered to</li>
+                    <li>Images should be compressed with <a href="http://www.smushit.com/ysmush.it/">Smush.it</a> (PNG) <a href="http://www.jpegmini.com/">JPEGmini</a> (JPEG) for deployment to live servers</li>
+                    <li>Leverage CSS sprites where appropriate to reduce page weight and HTTP requests</li>
+                </ol>
+            </article>
+
+        </section>
+
+        <section id="other">
+
+            <h1>Other</h1>
+
+            <article>
+                <h1>Other Guidelines</h1>
+                <ul>
+                    <li><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">Google's HTML/CSS Style Guide</a></li>
+                    <li><a href="http://taitems.github.com/Front-End-Development-Guidelines/">Open Source Front End Dev Guidelines</a></li>
+                    <li><a href="http://na.isobar.com/standards/">Isobar's Front-end Code Standards &amp; Best Practices</a></li>
+                    <li><a href="https://github.com/styleguide/css">GitHub's Internal CSS Styleguide</a></li>
+                </ul>
+            </article>
+
+        </section>
+
+    </div>
+
+    <footer class="global-footer" role="contentinfo">
+        Footer here
+    </footer>
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>-->
+
+    <script src="js/libs/jquery-1.7.2.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

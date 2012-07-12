@@ -1,0 +1,144 @@
+// Base styles
+// -------------------------
+
+// Global body styles
+// -------------------------
+body {
+    color: @textColour;
+    background-color: #fff;
+    font-size: @baseFontSize;
+}
+
+// Global header
+// -------------------------
+.global-header {
+    color: #fff;
+    background-color: @brandColour;
+
+    // Document title
+    > h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: normal;
+        padding: 5px 10px;
+        text-align: center;
+    }
+
+    // Navigation
+    nav {
+        h1 {
+            .visuallyhidden;
+        }
+
+        li {
+            border-top: 1px solid #eee;
+        }
+
+        a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 7px;
+            background-color: #999;
+
+            &:hover {
+                background-color: #777;
+            }
+        }
+    }
+}
+
+// Content area
+// -------------------------
+.content {
+    padding: 20px;
+
+    // Main document section
+    section {
+        // Headings
+        > h1 {
+            font-size: 25px;
+            margin: 0 0 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        // Sub section
+        article {
+            // Headings
+            h1 {
+                font-size: 18px;
+                margin: 0 0 10px;
+            }
+
+            // Lists
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+// Global footer
+// -------------------------
+.global-footer {
+    color: #777;
+    padding: 15px 20px;
+    border-top: 2px solid #ddd;
+}
+
+// Media queries
+// -------------------------
+
+// 800px and up screen sizes
+@media only screen and (min-width: 800px) {
+
+    // Add padding to body for fixed nav bar
+    body {
+        padding-top: 38px;
+    }
+
+    // Set fixed width on content and footer
+    .content,
+    .global-footer {
+        width: 800px;
+        margin: auto;
+    }
+
+    // Global header
+    // -------------------------
+    .global-header {
+        .clearfix;
+        .box-shadow(0 1px 3px rgba(0,0,0,.25));
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        zoom: 1;
+        clear: both;
+        overflow: visible;
+        width: 100%;
+        height: 38px;
+
+        // Title
+        > h1 {
+            text-align: left;
+            float: left;
+        }
+
+        // Navigation
+        nav {
+            float: right;
+            margin: 5px 5px 0 0;
+
+            li {
+                display: inline-block;
+                border-top: 0;
+            }
+
+            a {
+                .border-radius(2px);
+            }
+        }
+    }
+}
