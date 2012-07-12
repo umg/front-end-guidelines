@@ -4,11 +4,27 @@
 
 // HTML5 display definitions
 // -------------------------
-article, aside, details, footer, header, hgroup, nav, section { display: block; }
-[hidden] { display: none; }
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
 
-// Base
-// -------------------------
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
 
 // Apply a natural box layout model to all elements
 * {
@@ -17,8 +33,19 @@ article, aside, details, footer, header, hgroup, nav, section { display: block; 
     box-sizing: border-box;
 }
 
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+// Base
+// -------------------------
+
 // 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
-// 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+// 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom
 html {
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
@@ -40,6 +67,17 @@ body {
     line-height: 1.4;
 }
 
+// Remove text-shadow in selection highlight
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
 // Links
 // -------------------------
 a {
@@ -58,7 +96,7 @@ a {
         outline: thin dotted;
     }
 
-    // Improve readability when focused and hovered in all browsers: h5bp.com/h
+    // Improve readability when focused and hovered in all browsers
     &:hover,
     &:active {
         outline: 0;
@@ -106,7 +144,7 @@ mark {
     font-weight: bold;
 }
 
-// Redeclare monospace font family: h5bp.com/j
+// Redeclare monospace font family
 pre,
 code,
 kbd,
@@ -116,7 +154,7 @@ samp {
     font-size: 1em;
 }
 
-// Improve readability of pre-formatted text in all browsers
+// Improve readability of pre-formatted text
 pre {
     white-space: pre;
     white-space: pre-wrap;
@@ -133,9 +171,11 @@ q {
     }
 }
 
-small { font-size: 85%; }
+small {
+    font-size: 85%;
+}
 
-// Position subscript and superscript content without affecting line-height: h5bp.com/k
+// Position subscript and superscript content without affecting line-height
 sub,
 sup {
     font-size: 75%;
@@ -179,8 +219,14 @@ nav ol {
 // 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
 img {
     border: 0;
-    -ms-interpolation-mode: bicubic;
     vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+}
+
+// Figures
+// -------------------------
+figure {
+    margin: 0;
 }
 
 // Forms
@@ -204,9 +250,9 @@ label {
 // 2. Correct alignment displayed oddly in IE6/7
 legend {
     border: 0;
-    *margin-left: -7px;
     padding: 0;
     white-space: normal;
+    *margin-left: -7px;
 }
 
 // 1. Correct font-size not inheriting in all browsers
@@ -266,7 +312,7 @@ input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
 
-// Remove inner padding and border in FF3/4: h5bp.com/l
+// Remove inner padding and border in FF3/4
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0;
@@ -281,15 +327,6 @@ textarea {
     resize: vertical;
 }
 
-// Colors for form validity
-input:valid,
-textarea:valid {}
-
-input:invalid,
-textarea:invalid {
-    background-color: #f0dddd;
-}
-
 // Tables
 // -------------------------
 table {
@@ -302,19 +339,68 @@ td {
 }
 
 // Print styles
-// Inlined to avoid required HTTP connection: h5bp.com/r
+// Inlined to avoid required HTTP connection
 // -------------------------
 @media print {
-    * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } // Black prints faster: h5bp.com/s
-    a, a:visited { text-decoration: underline; }
-    a[href]:after { content: " (" attr(href) ")"; }
-    abbr[title]:after { content: " (" attr(title) ")"; }
-    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } // Don't show links for images, or javascript/internal links */
-    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-    thead { display: table-header-group; } // h5bp.com/t
-    tr, img { page-break-inside: avoid; }
-    img { max-width: 100% !important; }
-    @page { margin: 0.5cm; }
-    p, h2, h3 { orphans: 3; widows: 3; }
-    h2, h3 { page-break-after: avoid; }
+    * {
+        background: transparent !important;
+        color: #000 !important; // Black prints faster
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    // Don't show links for images, or javascript/internal links
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
