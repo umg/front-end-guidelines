@@ -1,8 +1,8 @@
 # Front End Guidelines
 
-Concise list of front end development guidelines to improve code consistency
+Concise list of front end development guidelines to improve code consistency.
 
-Broken in to these main cetegories
+Broken in to these main cetegories:
 
 * General
 * Markup
