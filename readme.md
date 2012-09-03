@@ -1,8 +1,6 @@
-# Front End Guidelines
+# [Front End Guidelines](http://umg.github.com/front-end-guidelines/)
 
-Concise list of front end development guidelines to improve code consistency.
-
-Broken in to these main cetegories:
+Concise list of front end development guidelines to improve code consistency, broken in to these main categories:
 
 * General
 * Markup
