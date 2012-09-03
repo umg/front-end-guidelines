@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Front End Guidelines</title>
     <meta name="description" content="Concise list of front end development guidelines to improve code consistency">
+    <meta name="author" content="Universal Music Group">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="css/main.css">
     <!--[if lt IE 9]>
@@ -13,7 +14,7 @@
 <body>
 
     <header class="global-header" role="banner">
-        <h1>Front End Guidelines</h1>
+        <h1><a href="index.html" rel="home">Front End Guidelines</a></h1>
         <nav>
             <h1>Contents</h1>
             <ul>
@@ -35,7 +36,6 @@
             <h1>General</h1>
 
             <article>
-                <!--<h1>The Basics</h1>-->
                 <ol>
                     <li>Develop with a <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> approach. Make content available to all, enhance for newer browsers</li>
                     <li>Think about how best to describe the information with code rather than just how to reproduce the design in a web browser</li>
@@ -55,7 +55,6 @@
             <h1>Markup</h1>
 
             <article>
-                <!--<h1>Writing HTML</h1>-->
                 <ol>
                     <li>Markup should be well-formed and <a href="http://en.wikipedia.org/wiki/Semantic_HTML">semantically correct</a></li>
                     <li>HTML5 Doctype and features should be used wherever appropriate</li>
@@ -75,7 +74,6 @@
             <h1>CSS</h1>
 
             <article>
-                <!--<h1>Writing CSS</h1>-->
                 <ol>
                     <li>Write CSS in <a href="http://lesscss.org/">LESS</a> for all the <a href="http://blog.bugsense.com/post/16878087313/learn-about-less-and-why-it-rocks-so-hard">benefits it brings</a></li>
                     <li>Consider using <code>* { box-sizing: border-box }</code> on new responsive projects (<a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">info</a>)</li>
@@ -102,12 +100,11 @@
             <h1>JavaScript</h1>
 
             <article>
-                <!--<h1>Writing JavaScript</h1>-->
                 <ul>
-                    <li>Place all JavaScript at the end of your document, except in <a href="#">special circumstances</a></li>
+                    <li>Place all JavaScript at the end of your document, except in <a href="http://developer.yahoo.com/performance/rules.html#js_bottom">special circumstances</a></li>
                     <li>Use single quotes as much as possible (<a href="http://stackoverflow.com/questions/242813/when-to-use-double-or-single-quotes-in-javascript">info</a>)</li>
                     <li>Feature sniff, rather than browser sniff, using <a href="http://modernizr.com/">Modernizr</a> (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#javascriptFeatureSniff">info</a>)</li>
-                    <li>Don't use <code>document.write()</code> (<a href="#">info</a>). There are better alternatives such as <code>.innerHTML</code> or <code>.createElement</code></li>
+                    <li>Don't use <code>document.write()</code> (<a href="http://stackoverflow.com/questions/802854/why-is-document-write-considered-a-bad-practice">info</a>). There are better alternatives such as <code>.innerHTML</code> or <code>.createElement</code></li>
                     <li>Use <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a> for variable and function names (<a href="http://taitems.github.com/Front-End-Development-Guidelines/#javascriptCamelCase">info</a>)</li>
                     <li>Constants or configuration variables (like animation durations, etc.) should be at the top of the file</li>
                     <li>Comment your code effectively and make it easy to read. Minification happens later</li>
@@ -123,9 +120,8 @@
             <h1>Accessibility</h1>
 
             <article>
-                <!--<h1>Making it Accessible</h1>-->
                 <ol>
-                    <li>Understand and use ARIA (<a href="#">intro</a>)</li>
+                    <li>Understand and use ARIA (<a href="http://dev.opera.com/articles/view/introduction-to-wai-aria/">intro</a>)</li>
                     <li>Interfaces should be checked against <a href="http://www.w3.org/TR/WCAG10/full-checklist.html">W3C's Checklist for Web Content Accessibility</a></li>
                     <li>Interfaces should meet <a href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#Guidelines">WCAG Priority 1 Guidelines</a></li>
                     <li><a href="http://sixrevisions.com/web-standards/accessibility_testtools/">More accessibility tools</a></li>
@@ -139,7 +135,6 @@
             <h1>Performance</h1>
 
             <article>
-                <!--<h1>Making it Perform</h1>-->
                 <ol>
                     <li>All CSS and JavaScript files should be minified and in as few files as is sensible for deployment to live servers</li>
                     <li>Google's <a href="https://developers.google.com/speed/docs/best-practices/rules_intro">Web Performance Best Practices</a> should be adhered to</li>
