@@ -1,18 +1,84 @@
 // Base styles
 // -------------------------
 
-// Global body styles
-// -------------------------
+html,
+button,
+input,
+select,
+textarea {
+    color: @textColour;
+}
+
 body {
     color: @textColour;
     background-color: #fff;
     font-size: @baseFontSize;
+    line-height: 1.4;
+}
+
+// Links
+a {
+    color: @linkColor;
+
+    &:visited {
+        color: @linkColorVisited;
+    }
+
+    &:hover {
+        color: @linkColorHover;
+        text-decoration: none;
+    }
+}
+
+// Selection highlight
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+// Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+img {
+    vertical-align: middle;
+}
+
+// Remove default fieldset styles.
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+// Allow only vertical resizing of textareas.
+textarea {
+    resize: vertical;
+}
+
+// Apply a natural box layout model to all elements
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// Remove margin and padding from nav ul/ols
+nav {
+
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 // Global header
 // -------------------------
 .global-header {
-    .gradientBar(@brandColour, lighten(@brandColour, 5%));
+    #gradient > .vertical(@brandColour, lighten(@brandColour, 5%));
     color: #fff;
     background-color: @brandColour;
 
@@ -56,6 +122,7 @@ body {
 
     // Main document section
     section {
+
         // Headings
         > h1 {
             font-size: 24px;
@@ -65,6 +132,7 @@ body {
 
         // Sub section
         article {
+
             // Headings
             h1 {
                 font-size: 16px;
