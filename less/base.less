@@ -1,32 +1,39 @@
 // Base styles
 // -------------------------
 
+// Apply a natural box layout model to all elements
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html,
 button,
 input,
 select,
 textarea {
-    color: @textColour;
+    color: @baseFontColor;
 }
 
 body {
-    color: @textColour;
+    color: @baseFontColor;
     background-color: #fff;
     font-size: @baseFontSize;
-    line-height: 1.4;
+    line-height: @baseLineHeight;
 }
 
 // Links
 a {
     color: @linkColor;
 
-    &:visited {
-        color: @linkColorVisited;
-    }
-
     &:hover {
         color: @linkColorHover;
         text-decoration: none;
+    }
+
+    &:visited {
+        color: @linkColorVisited;
     }
 }
 
@@ -58,13 +65,6 @@ textarea {
     resize: vertical;
 }
 
-// Apply a natural box layout model to all elements
-* {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 // Remove margin and padding from nav ul/ols
 nav {
 
@@ -89,6 +89,15 @@ nav {
         font-weight: normal;
         padding: 5px 10px;
         text-align: center;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     // Navigation
@@ -131,6 +140,7 @@ nav {
         // Headings
         > h1 {
             font-size: 24px;
+            font-weight: normal;
             margin: 0 0 20px;
             border-bottom: 1px solid #ddd;
         }
